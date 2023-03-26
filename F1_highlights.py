@@ -74,7 +74,7 @@ def getAllRaces():
             Race = '"Race Highlights | 2023 ' + actualName + ' Grand Prix"'
 
 
-
+            print(Race)
 
             YTsearch2(FP1name)
             YTsearch2(FP2name)
