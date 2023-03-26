@@ -9,6 +9,17 @@ from youtubesearchpython import *
 
 allVideoLinks = []
 
+
+hide_menu_style = """
+        <style>
+        #MainMenu {visibility: hidden;}
+        </style>
+        """
+st.markdown(hide_menu_style, unsafe_allow_html=True)
+
+
+
+
 htp="https://raw.githubusercontent.com/cctij69/F1_highlights/main/F1%20logo.png" 
 st.image(htp, width=350)
 
@@ -97,7 +108,7 @@ def YTsearch2(search_keyword):
         title = video['title']
 
         if "Pole" in title:
-            lineToPrint = title + " - " + video['link']
+            lineToPrint = "Pole lap video - " + video['link']
             allVideoLinks.append(lineToPrint)
         else:
             if search_keyword == '"'+title+'"':
