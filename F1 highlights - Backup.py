@@ -4,14 +4,17 @@ from datetime import datetime, timedelta
 import streamlit as st
 
 
+import google.auth
+import google.auth.transport.requests
+import google.oauth2.credentials
+from googleapiclient.errors import HttpError
+from googleapiclient.discovery import build
+import json
+
 from youtubesearchpython import *
 
 
 allVideoLinks = []
-
-htp="https://raw.githubusercontent.com/cctij69/F1_highlights/main/F1%20logo.png" 
-st.image(htp, width=350)
-
 
 
 def getAllRaces():
@@ -55,7 +58,7 @@ def getAllRaces():
         if date_diff <= timedelta(days=4):
             calendar_data[race_number] = (grand_prix_name, date_str)
 
-    for race_number, (grand_prix_name, date_str) in reversed(calendar_data.items()):
+    for race_number, (grand_prix_name, date_str) in calendar_data.items():
         button = st.button(f"Race {race_number}: {grand_prix_name}", key=race_number)
         if button:
             # Call a function and pass the grand_prix_name
@@ -78,7 +81,7 @@ def getAllRaces():
             Race = '"Race Highlights | 2023 ' + actualName + ' Grand Prix"'
 
 
-            print(Race)
+
 
             YTsearch2(FP1name)
             YTsearch2(FP2name)
@@ -86,6 +89,67 @@ def getAllRaces():
             YTsearch2(Quali)
             YTsearch2(PoleLap)
             YTsearch2(Race)
+
+
+
+
+def YTsearch(GPName):
+
+
+    # Set the API credentials (you'll need to create a project and enable the YouTube API to get these)
+    creds = json.load(open('credentials.json'))
+    api_key = "AIzaSyA7yiYIC1R08c6btaT0G7hYSNQQnxeMrUY"
+
+    # Set the YouTube API service
+    youtube = build('youtube', 'v3', developerKey=api_key, cache_discovery=False)
+
+    # Set the ID of the YouTube channel to search in
+    channel_id = 'UCB_qr75-ydFVKSF9Dmo6izg'
+
+    # Set the query to search for in the video titles
+    query = GPName
+
+    # Set the maximum number of videos to retrieve
+    max_results = 1
+
+    # Search for videos in the channel with the given query
+    try:
+        request = youtube.search().list(
+            part='snippet',
+            channelId=channel_id,
+            q=query,
+            type='video',
+            maxResults=max_results
+        )
+        response = request.execute()
+        videos = []
+        for item in response['items']:
+            video_id = item['id']['videoId']
+            videos.append({
+                'title': item['snippet']['title'],
+                'thumbnail': item['snippet']['thumbnails']['default']['url'],
+                #'video_id': item['id']['videoId'],
+                #'published_at': item['snippet']['publishedAt'],
+                'video_link': f'https://www.youtube.com/watch?v={video_id}'
+            })
+        for race in videos:
+            if "Pole" in race['title']:
+                print (race['title'] + " - " + race['video_link'])
+            else:
+                print (query)
+                print (race['title'])
+                if query == race['title']:
+                    print (race['title'] + " - " + race['video_link'])
+                
+            
+
+        #print(videos)
+        #st.write()
+    except HttpError as error:
+        print(f'An HTTP error {error.resp.status} occurred:\n{error.content}')
+
+
+
 
 
 
@@ -111,6 +175,7 @@ def YTsearch2(search_keyword):
 
 
 getAllRaces()
+#YTsearch()
 
 for item in allVideoLinks:
     st.write(item)
