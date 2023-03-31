@@ -80,6 +80,8 @@ def getAllRaces():
 
             if actualName == "Saudi Arabia":
                 actualName = "Saudi Arabian"
+            elif actualName == "Australia":
+                actualName = "Australian"
 
             FP1name = '"FP1 Highlights | 2023 ' + actualName + ' Grand Prix"'
             FP2name = '"FP2 Highlights | 2023 ' + actualName + ' Grand Prix"'
