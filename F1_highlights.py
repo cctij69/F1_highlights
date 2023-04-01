@@ -87,7 +87,7 @@ def getAllRaces():
             FP2name = '"FP2 Highlights | 2023 ' + actualName + ' Grand Prix"'
             FP3name = '"FP3 Highlights | 2023 ' + actualName + ' Grand Prix"'
             Quali = '"Qualifying Highlights | 2023 ' + actualName + ' Grand Prix"'
-            PoleLap = 'Pole Lap | 2023 ' + actualName + ' Grand Prix | Pirelli'
+            PoleLap = '"Pole Lap | 2023 ' + actualName + ' Grand Prix | Pirelli"'
             Race = '"Race Highlights | 2023 ' + actualName + ' Grand Prix"'
 
 
@@ -96,8 +96,11 @@ def getAllRaces():
             YTsearch2(FP1name)
             YTsearch2(FP2name)
             YTsearch2(FP3name)
-            YTsearch2(Quali)
-            YTsearch2(PoleLap)
+            if not YTsearch2(Quali):
+                Quali = Quali.replace('"',"")
+                YTsearch2(Quali)
+            if not YTsearch2(PoleLap):
+                PoleLap = PoleLap.replace('"',"")
             YTsearch2(Race)
 
 
@@ -108,6 +111,9 @@ def YTsearch2(search_keyword):
     search = CustomSearch(search_keyword, VideoUploadDateFilter.thisYear, limit = 1)
     for video in search.result()['result']:
         title = video['title']
+
+        if '"' not in search_keyword:
+            search_keyword = '"' + search_keyword + '"'
 
         if "Pole" in title:
             lineToPrint = "Pole lap video - " + video['link']
