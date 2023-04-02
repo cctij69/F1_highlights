@@ -96,33 +96,46 @@ def getAllRaces():
             YTsearch2(FP1name)
             YTsearch2(FP2name)
             YTsearch2(FP3name)
-            if not YTsearch2(Quali):
+            test = YTsearch2(Quali)
+            if test == None:
                 Quali = Quali.replace('"',"")
-                YTsearch2(Quali)
+                test = YTsearch2(Quali)
             if not YTsearch2(PoleLap):
                 PoleLap = PoleLap.replace('"',"")
+                YTsearch2(PoleLap)
             YTsearch2(Race)
 
 
 
 
 def YTsearch2(search_keyword):
-    #search = CustomSearch(search_keyword, VideoUploadDateFilter.thisWeek, limit = 1)
     search = CustomSearch(search_keyword, VideoUploadDateFilter.thisYear, limit = 1)
     for video in search.result()['result']:
         title = video['title']
-
         if '"' not in search_keyword:
             search_keyword = '"' + search_keyword + '"'
 
+
+
+
         if "Pole" in title:
-            lineToPrint = "Pole lap video - " + video['link']
-            allVideoLinks.append(lineToPrint)
+            search_keyword = search_keyword.replace('"',"")
+            if search_keyword in title:
+                lineToPrint = "Pole lap video - " + video['link']
+                allVideoLinks.append(lineToPrint)
+                return lineToPrint
+            else:
+                return None
         else:
             if search_keyword == '"'+title+'"':
                 lineToPrint = title + " - " + video['link']
                 allVideoLinks.append(lineToPrint)
-                #return video['link']
+                return lineToPrint
+            else:
+                return None
+
+            
+
 
 
 
