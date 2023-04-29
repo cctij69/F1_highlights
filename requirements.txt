@@ -1,3 +1,2 @@
 datetime
-beautifulsoup4
 youtube-search-python
