@@ -32,7 +32,7 @@ gp_schedule = {
     5: {'Grand Prix': 'Miami', 'Circuit': 'Florida', 'Date': '07 May', 'Sprint': 'No'},
     6: {'Grand Prix': 'Emilia Romagna', 'Circuit': 'Imola', 'Date': '21 May', 'Sprint': 'No'},
     7: {'Grand Prix': 'Monaco', 'Circuit': 'Monte Carlo', 'Date': '28 May', 'Sprint': 'No'},
-    8: {'Grand Prix': 'Spain', 'Circuit': 'Catalunya', 'Date': '04 June', 'Sprint': 'No'},
+    8: {'Grand Prix': 'Spainish', 'Circuit': 'Catalunya', 'Date': '04 June', 'Sprint': 'No'},
     9: {'Grand Prix': 'Canadian', 'Circuit': 'Montreal', 'Date': '18 June', 'Sprint': 'No'},
     10: {'Grand Prix': 'Austrian', 'Circuit': 'Spielberg', 'Date': '02 July', 'Sprint': 'Yes'},
     11: {'Grand Prix': 'British', 'Circuit': 'Silverstone', 'Date': '09 July', 'Sprint': 'No'},
