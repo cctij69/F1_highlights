@@ -109,6 +109,9 @@ def getAllRaces(gp_schedule):
                     if not YTsearch2(stage):    
                         stage = stage.replace("'","")
                         YTsearch2(stage)
+
+            for item in allVideoLinks:
+                st.write(item)
             
 
 
@@ -163,7 +166,7 @@ def YTsearch2(search_keyword):
 
 getAllRaces(gp_schedule)
 
-for item in allVideoLinks:
-    st.write(item)
+#for item in allVideoLinks:
+#    st.write(item)
 
 
