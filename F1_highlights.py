@@ -36,7 +36,7 @@ gp_schedule = {
     9: {'Grand Prix': 'Canadian', 'Circuit': 'Montreal', 'Date': '18 June', 'Sprint': 'No'},
     10: {'Grand Prix': 'Austrian', 'Circuit': 'Spielberg', 'Date': '02 July', 'Sprint': 'Yes'},
     11: {'Grand Prix': 'British', 'Circuit': 'Silverstone', 'Date': '09 July', 'Sprint': 'No'},
-    12: {'Grand Prix': 'Hungary', 'Circuit': 'Hungaroring', 'Date': '23 July', 'Sprint': 'No'},
+    12: {'Grand Prix': 'Hungarian', 'Circuit': 'Hungaroring', 'Date': '23 July', 'Sprint': 'No'},
     13: {'Grand Prix': 'Belgium', 'Circuit': 'Spa-Francorchamps', 'Date': '30 July', 'Sprint': 'Yes'},
     14: {'Grand Prix': 'Netherlands', 'Circuit': 'Zandvoort', 'Date': '27 August', 'Sprint': 'No'},
     15: {'Grand Prix': 'Italian', 'Circuit': 'Monza', 'Date': '03 September', 'Sprint': 'No'},
