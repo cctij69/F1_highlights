@@ -44,7 +44,7 @@ gp_schedule = {
     17: {'Grand Prix': 'Japanese', 'Circuit': 'Suzuka', 'Date': '24 September', 'Sprint': 'No'},
     18: {'Grand Prix': 'Qatar', 'Circuit': 'Losail', 'Date': '08 October', 'Sprint': 'Yes'},
     19: {'Grand Prix': 'United States', 'Circuit': 'Austin', 'Date': '22 October', 'Sprint': 'Yes'},
-    20: {'Grand Prix': 'Mexican', 'Circuit': 'Mexico City', 'Date': '29 October', 'Sprint': 'No'},
+    20: {'Grand Prix': 'Mexico City', 'Circuit': 'Mexico City', 'Date': '29 October', 'Sprint': 'No'},
     21: {'Grand Prix': 'Sao Paulo', 'Circuit': 'Interlagos', 'Date': '05 November', 'Sprint': 'Yes'},
     22: {'Grand Prix': 'Las Vegas', 'Circuit': 'Las Vegas', 'Date': '18 November', 'Sprint': 'No'},
     23: {'Grand Prix': 'Abu Dhabi', 'Circuit': 'Yas Marina', 'Date': '26 November', 'Sprint': 'No'}
