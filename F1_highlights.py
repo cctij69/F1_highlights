@@ -87,15 +87,15 @@ def getAllRaces(gp_schedule):
 
 
 
-            FP1name = '"FP1 Highlights | 2023 ' + actualName + ' Grand Prix"'
-            FP2name = '"FP2 Highlights | 2023 ' + actualName + ' Grand Prix"'
-            FP3name = '"FP3 Highlights | 2023 ' + actualName + ' Grand Prix"'
-            Quali = '"Qualifying Highlights | 2023 ' + actualName + ' Grand Prix"'
-            PoleLap = '"Pole Lap | 2023 ' + actualName + ' Grand Prix | Pirelli"'
-            SprintShootout = '"Sprint Shootout Highlights | 2023 ' + actualName + ' Grand Prix"'
-            SprintShootoutPoleLap = '"Sprint Shootout Pole Lap | 2023 ' + actualName + ' Grand Prix"'
-            Sprint = '"Sprint Highlights | 2023 ' + actualName + ' Grand Prix"'
-            Race = '"Race Highlights | 2023 ' + actualName + ' Grand Prix"'
+            FP1name = '"FP1 Highlights | 2024 ' + actualName + ' Grand Prix"'
+            FP2name = '"FP2 Highlights | 2024 ' + actualName + ' Grand Prix"'
+            FP3name = '"FP3 Highlights | 2024 ' + actualName + ' Grand Prix"'
+            Quali = '"Qualifying Highlights | 2024 ' + actualName + ' Grand Prix"'
+            PoleLap = '"Pole Lap | 2024 ' + actualName + ' Grand Prix | Pirelli"'
+            SprintShootout = '"Sprint Shootout Highlights | 2024 ' + actualName + ' Grand Prix"'
+            SprintShootoutPoleLap = '"Sprint Shootout Pole Lap | 2024 ' + actualName + ' Grand Prix"'
+            Sprint = '"Sprint Highlights | 2024 ' + actualName + ' Grand Prix"'
+            Race = '"Race Highlights | 2024 ' + actualName + ' Grand Prix"'
 
 
             if sprint_check == "No":
